@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-blue': '#597fd2',
-        'blue': '#84a1de',
+        "dark-blue": '#597fd2',
+        "blue": '#84a1de',
         'light-blue': '#1786de3b',
-        "pink" : "#ff49db",
-        'green': '#13ce66',
-        'yellow': '#ffc82c',
-        'gray-dark': '#273444',
-        'gray': '#8492a6',
-        'gray-light': '#d3dce6',
+        "dark-midnight-blue" : "#003266",
+        "azure": '#027FFF',
+        "light-silver": '#D9D9D9',
+        "green": '#72F977',
+        "royal-orange": '#FF9548',
+        "pastel-red": '#FF6767',
       },
       spacing: {
         '8xl': '96rem',
@@ -24,7 +24,6 @@ export default {
     },
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
-      serif: ['Times New Roman', 'serif'],
     },
   },
   plugins: [],

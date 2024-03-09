@@ -13,12 +13,17 @@ const Navbar = () => {
             <div className="flex gap-2 md:gap-4 items-center">
                 <h6 className="font-bold text-sm md:text-xl">BREECE</h6>
             </div>
+            <div className="flex gap-2 md:gap-5 items-center">
+                <a className="text-sm md:text-lg" href="">Home </a>
+                <a className="text-sm md:text-lg" href="">My event </a>
+                <a className="text-sm md:text-lg" href="">About us</a>
+            </div>
             <div className="flex gap-2 md:gap-4">
                 <Button
                     type={"button"}
                     variation={"primary"}
                     onClick={() => console.log("klik")}
-                >Home</Button>
+                >Sign up</Button>
                 {isAuthenticated ? (
                 <Button
                     type={"button"}
