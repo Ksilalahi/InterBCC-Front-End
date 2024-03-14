@@ -10,21 +10,23 @@ export default {
         "dark-midnight-blue" : "#003266",
         "azure": '#027FFF',
         "light-silver": '#D9D9D9',
-        "green": '#72F977',
-        "royal-orange": '#FF9548',
-        "pastel-red": '#FF6767',
       },
-      spacing: {
-        '8xl': '96rem',
-        '9xl': '128rem',
-      },
-      borderRadius: {
-        '4xl': '2rem',
-      }
+    },
+    screens: {
+      'tablet': '640px',
+      'laptop': '1024px',
+      'desktop': '1280px',
     },
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
     },
+    backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+      '50%': '50%',
+      '16': '4rem',
+    }
   },
   plugins: [],
 };

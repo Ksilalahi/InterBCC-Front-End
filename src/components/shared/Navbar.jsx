@@ -28,7 +28,7 @@ const Navbar = () => {
                 <Button
                     type={"button"}
                     variation={"secondary"}
-                    onClick={() => [navigate]}
+                    onClick={() => navigate("/")}
                 >Log Out</Button>
                 ) : (
                     <Button

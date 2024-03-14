@@ -28,33 +28,40 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="p-5 md:p-10 rounded-3xl bg-white w-[calc(100vw-40px)] max-w-[450px] flex flex-col gap-2 h-fit">
-        <h3 className="text-xl md:-2xl font-semibold md:text-left">Login Form</h3>
-        <form className="flex flex-col gap-4" onSubmit={(e) => handleSubmit()}>
-        <Input
-        type="email"
-        label={"Email"}
-        name={"email"}
-        onChange={(e) => setForm({...form, email: e.target.value})}
-        required={true}
-        />
-        <Input
-        type="password"
-        label={"Password"}
-        name={"password"}
-        onChange={(e) => setForm({...form, password: e.target.value})}
-        required={true}
-        />
-        <Button
-        type={"submit"}
-        variation={"secondary"}
-        className={"w-full mt-2"}
-        > Login
-        </Button>
-        <p className=" w-full text-center text-sm md:text-base">Not Registered? <a href="/signup">Create an account</a></p>
-        </form>
-    </div>
+    <div className="pt-28 pl-16 w-1/2 mx-4">
+      <h3 className="text-4xl font-semibold font-sans text-dark-midnight-blue">
+        Selamat Datang!</h3>
+      <p className="mb-10 text-dark-midnight-blue font-sans">Tidak punya akun? <a href="/signup" className="text-azure">
+        Daftar</a></p>
+
+      <form className="flex flex-col">
+      <p className="text-dark-midnight-blue text-lg">Alamat email</p>
+      <Input
+      type="email"
+      label={"e.g.breece@gmail.com"}
+      name={"email"}
+      onChange={(e) => setForm({...form, email: e.target.value})}
+      required={true}
+      ></Input>
+      <p className="mt-4 text-dark-midnight-blue text-lg">Password</p>
+      <Input
+      type="password"
+      label={"Masukkan password"}
+      name={"password"}
+      onChange={(e) => setForm({...form, pasword: e.target.value})}
+      required={true}
+      ></Input>
+      <p className="mt-4 text-dark-midnight-blue">Ingat saya <a href="" className="pl-48 text-dark-midnight-blue">Lupa Password?</a></p>
+      <Button
+      type={"submit"}
+      variation={""}
+      className={"w-96 h-12 my-4 bg-dark-midnight-blue text-white"}
+      onClick={() => navigate("/home")}
+      >Masuk</Button>
+      </form>
+    </div> 
   );
+  
 }
 
 export default LoginForm;
