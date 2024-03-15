@@ -13,13 +13,14 @@ const LoginForm = () => {
 
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    console.log(form);
     try {
       const response = await handleLogin[form];
       console.log(response);
-      // setTimeout(()=>{
-      //   navigate("/")
-      // }, 1000)
+
+      window.localStorage.setItem("token", response.data.token);
+      setTimeout(()=>{
+        navigate("/")
+      }, 1000)
       
     } catch (error) {
       console.log(error);
@@ -31,10 +32,10 @@ const LoginForm = () => {
     <div className="pt-28 pl-16 w-1/2 mx-4">
       <h3 className="text-4xl font-semibold font-sans text-dark-midnight-blue">
         Selamat Datang!</h3>
-      <p className="mb-10 text-dark-midnight-blue font-sans">Tidak punya akun? <a href="/signup" className="text-azure">
+      <p className="mb-10 text-dark-midnight-blue font-sans">Tidak punya akun? <a href="/register" className="text-azure">
         Daftar</a></p>
 
-      <form className="flex flex-col">
+      <form className="flex flex-col" onSubmit={()=> handleSubmit(e)}>
       <p className="text-dark-midnight-blue text-lg">Alamat email</p>
       <Input
       type="email"

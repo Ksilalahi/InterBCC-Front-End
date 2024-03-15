@@ -2,24 +2,25 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
-import { handleLogin } from "../../services/auth";
+import { handleRegister } from "../../services/auth";
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const navigate = useNavigate();
   const [form, setForm]= useState({
     email: "",
-    password: ""
+    password: "",
+    full_name: ""
   })
 
-  const handleSubmit = async (e)=>{
+  const handleRegister = async (e)=>{
     e.preventDefault();
-    console.log(form);
     try {
-      const response = await handleLogin[form];
+      const response = await handleRegister[form];
       console.log(response);
-      // setTimeout(()=>{
-      //   navigate("/")
-      // }, 1000)
+
+      setTimeout(()=>{
+        navigate("/")
+      }, 1000)
       
     } catch (error) {
       console.log(error);
@@ -33,7 +34,7 @@ const LoginForm = () => {
         Daftar Sekarang!</h3>
       <p className="mb-10 text-dark-midnight-blue font-sans">Buat akun anda di BREECE</p>
 
-      <form className="flex flex-col">
+      <form className="flex flex-col" onSubmit={()=> handleRegister(e)}>
       <p className="text-dark-midnight-blue text-lg">Nama</p>
       <Input
       type="nama"
@@ -63,11 +64,11 @@ const LoginForm = () => {
       variation={""}
       className={"w-96 mt-10 h-12 my-4 bg-dark-midnight-blue text-white"}
       onClick={() => navigate("/")}
-      ><a href="/login">Daftar</a></Button>
+      ><a href="/">Daftar</a></Button>
       </form>
     </div>  
   );
   
 }
 
-export default LoginForm;
+export default RegisterForm;
